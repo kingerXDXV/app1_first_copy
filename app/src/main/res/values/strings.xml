@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="text1">Learn Python</string>
+    <string name="btn1">Articles
+      <br /><br />  Learn something new by reading our articles related to this topic.</string>
+    <string name="btn2">Take a Quiz
+       <br /><br /> Make sure your knowledge persist by taking a quick quiz to test your knowledge.</string>
+
+    <string name="learn">learn</string>
+
+    <!--    Select difficulty activity-->
+    <string name="difficulty">Choose Difficulty</string>
+    <string name="Beginner">Beginner</string>
+    <string name="Intermediate">Intermediate</string>
+    <string name="Advanced">Advanced</string>
+
+    <!--    Set timer Activity-->
+    <string name="set_timer">Set Timer</string>
+    <string name="yes">Yes</string>
+    <string name="no">NO</string>
+    <string name="next">Next</string>
+    <string name="note">Note:- <br />
+    If timer is ON then question sharing button will <br />
+    be disabled and else it will be visible for sharing
+    </string>
+    <!--    question view-->
+    <string name="scroll">scrolling</string>
+    <string name="question">Question:-</string>
+    <string name="linux">Linux</string>
+    <string name="loading">loading..</string>
+    <string name="error">Error</string>
+    <string name="h">Hello</string>
+    <string name="question_text">Question Text</string>
+    <string name="options">Options</string>
+    <string name="timer">Timer</string>
+
+</resources>
