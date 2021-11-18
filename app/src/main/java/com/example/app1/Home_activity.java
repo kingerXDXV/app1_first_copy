@@ -20,7 +20,7 @@ public class Home_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 the_parent_class obj = new the_parent_class();
-                obj.setUrl("https://quizapi.io/api/v1/questions?apiKey=Z48nBSLeMR7T0t9hmTcZvV4RhO4AR31vz9M6skEE&category=linux&limit=10");
+                obj.setUrl("https://quizapi.io/api/v1/questions?apiKey=Z48nBSLeMR7T0t9hmTcZvV4RhO4AR31vz9M6skEE");
 
                 Intent intent =new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);

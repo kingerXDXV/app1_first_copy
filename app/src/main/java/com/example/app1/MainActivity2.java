@@ -26,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         beginner.setOnClickListener(view -> {
-            obj.setCategory("Easy");
+            obj.setCategory("&difficulty=Easy&limit=15");
             startActivity(intent);
         });
 

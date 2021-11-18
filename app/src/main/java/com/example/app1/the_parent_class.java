@@ -12,6 +12,7 @@ class the_parent_class {
 
     public void setCategory(String category) {
         the_parent_class.category = category;
+        url=url+category;
     }
 
     // url
