@@ -12,16 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".Result_activity"
-            android:exported="false" />
-        <activity
-            android:name=".Home_activity"
+            android:name=".Sign_in_activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Result_activity"
+            android:exported="false" />
+        <activity
+            android:name=".Home_activity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".MainActivity4"
@@ -34,7 +38,7 @@
             android:exported="true" />
         <activity
             android:name=".choice_activity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

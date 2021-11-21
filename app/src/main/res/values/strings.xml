@@ -37,8 +37,10 @@
     <string name="let_s_start">Let\'s <b> Start </b></string>
     <string name="code">Code</string>
     <string name="sql">SQL</string>
-    <string name="create_test">Create Test<br/><br/> You can crate a test here and share code.</string>
+    <string name="create_test">Create Test<br /><br /> You can crate a test here and share code.</string>
     <string name="enter_test">Enter Test </string>
+    <string name="g_google">    G+  |   Google</string>
+    <string name="sign_in_with">Sign In with</string>
 
     <!--    URL's-->
 

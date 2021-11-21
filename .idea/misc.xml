@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/create_test.xml" value="0.21614583333333334" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/enter_test.xml" value="0.21614583333333334" />
+        <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/google_btn.xml" value="0.21614583333333334" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/linux.xml" value="0.21614583333333334" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/next_btn.xml" value="0.21614583333333334" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/drawable/test_btn.xml" value="0.21614583333333334" />
@@ -16,6 +17,7 @@
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/layout/activity_main3.xml" value="0.18115942028985507" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/layout/activity_main4.xml" value="0.18115942028985507" />
         <entry key="..\:/android_app/app1 - Copy/app/src/main/res/layout/activity_result.xml" value="0.18115942028985507" />
+        <entry key="..\:/android_app/app1 - Copy/app/src/main/res/layout/activity_sign_in.xml" value="0.22" />
         <entry key="..\:/android_app/app1/app/src/main/res/drawable/advanced.xml" value="0.2203125" />
         <entry key="..\:/android_app/app1/app/src/main/res/drawable/beginner.xml" value="0.2203125" />
         <entry key="..\:/android_app/app1/app/src/main/res/drawable/intermediate.xml" value="0.2203125" />

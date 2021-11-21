@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "231709477512",
+    "project_id": "wyserop",
+    "storage_bucket": "wyserop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231709477512:android:5fa8c781976a2f90d52d3d",
+        "android_client_info": {
+          "package_name": "com.example.app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231709477512-cm08scm6v69ojo7crr805qe38ct8nv1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdZDe6lUN2T8sqopO5w1FhFTdIlPKrRCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231709477512-cm08scm6v69ojo7crr805qe38ct8nv1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
