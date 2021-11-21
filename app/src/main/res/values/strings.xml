@@ -2,9 +2,9 @@
     <string name="app_name">Wyser</string>
     <string name="text1">Let\'s Learn</string>
     <string name="btn1">Articles
-      <br /><br />  Learn something new by reading our articles related to this topic.</string>
+      <br /><br />  Learn something new here</string>
     <string name="btn2">Take a Quiz
-       <br /><br /> Make sure your knowledge persist by taking a quick quiz to test your knowledge.</string>
+       <br /><br /> Test your knowledge</string>
 
     <string name="learn">learn</string>
 
@@ -37,7 +37,7 @@
     <string name="let_s_start">Let\'s <b> Start </b></string>
     <string name="code">Code</string>
     <string name="sql">SQL</string>
-    <string name="create_test">Create Test<br /><br /> You can crate a test here and share code.</string>
+    <string name="create_test">Create Test<br /><br /> You can crate a test here.</string>
     <string name="enter_test">Enter Test </string>
     <string name="g_google">    G+  |   Google</string>
     <string name="sign_in_with">Sign In with</string>
