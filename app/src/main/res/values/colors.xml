@@ -10,4 +10,8 @@
     <color name="red">#F44336</color>
     <color name="orange">#FF5722</color>
     <color name="blue">#00BCD4</color>
+    <color name="yellow">#FFEE10</color>
+    <color name="green">#23BB29</color>
+    <color name="reddish">#FF9800</color>
+    <color name="reddish_orange">#FC7348</color>
 </resources>
