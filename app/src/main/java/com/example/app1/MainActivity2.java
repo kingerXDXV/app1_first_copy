@@ -26,17 +26,17 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         beginner.setOnClickListener(view -> {
-            obj.setCategory("Easy");
+            obj.setCategory("&difficulty=Easy&limit=15");
             startActivity(intent);
         });
 
         intermediate.setOnClickListener(view -> {
-            obj.setCategory("Medium");
+            obj.setCategory("&difficulty=Medium&limit=15");
             startActivity(intent);
         });
 
         advanced.setOnClickListener(view -> {
-            obj.setCategory("Hard");
+            obj.setCategory("&difficulty=Hard&limit=15");
             startActivity(intent);
         });
 

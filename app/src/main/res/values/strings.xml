@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">app</string>
-    <string name="text1">Learn Python</string>
+    <string name="app_name">Wyser</string>
+    <string name="text1">Let\'s Learn</string>
     <string name="btn1">Articles
-      <br /><br />  Learn something new by reading our articles related to this topic.</string>
+      <br /><br />  Learn something new here</string>
     <string name="btn2">Take a Quiz
-       <br /><br /> Make sure your knowledge persist by taking a quick quiz to test your knowledge.</string>
+       <br /><br /> Test your knowledge</string>
 
     <string name="learn">learn</string>
 
@@ -20,18 +20,23 @@
     <string name="no">NO</string>
     <string name="next">Next</string>
     <string name="note">Note:- <br />
-    If timer is ON then question sharing button will <br />
-    be disabled and else it will be visible for sharing
+    If timer is ON then you will have only <br />
+    5 minutes to answer all 15 questions
     </string>
     <!--    question view-->
     <string name="scroll">scrolling</string>
     <string name="question">Question:-</string>
-    <string name="linux">Linux</string>
     <string name="loading">loading..</string>
     <string name="error">Error</string>
-    <string name="h">Hello</string>
     <string name="question_text">Question Text</string>
     <string name="options">Options</string>
     <string name="timer">Timer</string>
+    <string name="let_s_start">Let\'s <b> Start </b></string>
+    <string name="create_test">Create Test<br /><br /> You can crate a test here.</string>
+    <string name="enter_test">Enter Test </string>
+    <string name="g_google">    G+  |   Google</string>
+    <string name="sign_in_with">Sign In with</string>
+
+    <!--    URL's-->
 
 </resources>

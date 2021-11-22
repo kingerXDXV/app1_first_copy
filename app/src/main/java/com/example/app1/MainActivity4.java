@@ -27,6 +27,7 @@ public class MainActivity4 extends AppCompatActivity {
     private Button option2;
     private Button option3;
     private Button option4;
+    private Button next_question;
     private TextView answer_show;
     int count=0;
     private String answer1,answer2,answer3,answer4;
@@ -41,10 +42,10 @@ public class MainActivity4 extends AppCompatActivity {
         option2=findViewById(R.id.option_2);
         option3=findViewById(R.id.option_3);
         option4=findViewById(R.id.option_4);
-        Button next_question = findViewById(R.id.next_question);
+        next_question = findViewById(R.id.next_question);
         answer_show = findViewById(R.id.answer_show);
 
-
+        next_question.setClickable(false);
         the_parent_class obj=new the_parent_class();
 
         set_timer(obj);
@@ -57,6 +58,7 @@ public class MainActivity4 extends AppCompatActivity {
             option3.setClickable(true);
             option4.setClickable(true);
             answer_show.setText("");
+            next_question.setClickable(false);
         });
 
         option_checker();
@@ -102,6 +104,7 @@ public class MainActivity4 extends AppCompatActivity {
         option2.setClickable(false);
         option3.setClickable(false);
         option4.setClickable(false);
+        next_question.setClickable(true);
     }
 
     //To set time and display an alert dialog
