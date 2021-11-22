@@ -26,17 +26,12 @@
     <!--    question view-->
     <string name="scroll">scrolling</string>
     <string name="question">Question:-</string>
-    <string name="linux">Linux</string>
     <string name="loading">loading..</string>
     <string name="error">Error</string>
-    <string name="h">Hello</string>
     <string name="question_text">Question Text</string>
     <string name="options">Options</string>
     <string name="timer">Timer</string>
-    <string name="bash">Bash</string>
     <string name="let_s_start">Let\'s <b> Start </b></string>
-    <string name="code">Code</string>
-    <string name="sql">SQL</string>
     <string name="create_test">Create Test<br /><br /> You can crate a test here.</string>
     <string name="enter_test">Enter Test </string>
     <string name="g_google">    G+  |   Google</string>

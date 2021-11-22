@@ -46,7 +46,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bash"
+                    android:background="@drawable/bad_bash"
                     android:textAlignment="viewStart" />
 
                 <Button
@@ -55,7 +55,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/linux"
+                    android:background="@drawable/bad_linux"
                     android:textAlignment="viewStart" />
             </LinearLayout>
 
