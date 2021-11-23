@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private boolean flag=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,24 +20,36 @@ public class MainActivity2 extends AppCompatActivity {
         beginner=findViewById(R.id.beginner);
         intermediate=findViewById(R.id.middle);
         advanced=findViewById(R.id.advanced);
-
+        Intent pre_intent = getIntent();
+        int create = pre_intent.getExtras().getInt("create");
         the_parent_class obj=new the_parent_class();
 
-        Intent intent = new Intent(getApplicationContext(),MainActivity3.class);
-
+        Intent intent;
+        if(create==1){
+            intent = new Intent(getApplicationContext(),Create_custom_test.class);
+            flag=true;
+        }else{
+            intent = new Intent(getApplicationContext(),MainActivity3.class);
+        }
 
 
         beginner.setOnClickListener(view -> {
+            if(flag)
+            obj.setTest_code2("211");
             obj.setCategory("&difficulty=Easy&limit=15");
             startActivity(intent);
         });
 
         intermediate.setOnClickListener(view -> {
+            if(flag)
+            obj.setTest_code2("222");
             obj.setCategory("&difficulty=Medium&limit=15");
             startActivity(intent);
         });
 
         advanced.setOnClickListener(view -> {
+            if(flag)
+            obj.setTest_code2("233");
             obj.setCategory("&difficulty=Hard&limit=15");
             startActivity(intent);
         });

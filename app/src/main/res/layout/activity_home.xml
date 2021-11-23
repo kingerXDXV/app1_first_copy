@@ -23,7 +23,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -46,7 +45,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bad_bash"
+                    android:background="@drawable/bash_min"
                     android:textAlignment="viewStart" />
 
                 <Button
@@ -55,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bad_linux"
+                    android:background="@drawable/linux_min"
                     android:textAlignment="viewStart" />
             </LinearLayout>
 
@@ -72,7 +71,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sql"
+                    android:background="@drawable/sql_min"
                     android:textAlignment="viewStart" />
 
                 <Button
@@ -81,7 +80,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/code"
+                    android:background="@drawable/code_min"
                     android:textAlignment="viewStart"
 
                     />

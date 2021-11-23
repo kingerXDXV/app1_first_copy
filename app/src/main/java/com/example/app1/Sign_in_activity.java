@@ -36,7 +36,6 @@ public class Sign_in_activity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         auth = FirebaseAuth.getInstance();
-
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -89,6 +88,12 @@ public class Sign_in_activity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
+                            dataBase obj = new dataBase();
+                            assert user != null;
+                            obj.setUsername(user.getDisplayName());
+                            obj.setUser_mail(user.getEmail());
+                            obj.collect_data();
+
                             startActivity(new Intent(Sign_in_activity.this, Home_activity.class));
                         } else {
                             // If sign in fails, display a message to the user.
@@ -105,7 +110,6 @@ public class Sign_in_activity extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser = auth.getCurrentUser();
-
         if (currentUser != null) {
             startActivity(new Intent(getApplicationContext(), Home_activity.class));
         }
