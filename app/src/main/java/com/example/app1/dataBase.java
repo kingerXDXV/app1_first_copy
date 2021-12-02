@@ -1,72 +1,28 @@
 package com.example.app1;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class dataBase {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private String username;
-    private String user_mail;
-    private String subject= "";
-    private int marks=0;
 
     Map<String, Object> user = new HashMap<>();
-    Map<String, Object> progress = new HashMap<>();
 
-    public void collect_data(){
+    public dataBase(String username, String user_mail){
         user.put("user_name",username);
         user.put("user_mail",user_mail);
 
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
+        db.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                .set(user)
+                .addOnSuccessListener(unused -> {
 
-                    }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+                .addOnFailureListener(e -> {
 
-                    }
                 });
-
-        progress_data();
-    }
-
-    public void progress_data(){
-        user.put("progress",progress);
-        db.collection("progress")
-                .add(progress)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-
-    }
-
-    // setter methods
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setUser_mail(String user_mail) {
-        this.user_mail = user_mail;
     }
 }

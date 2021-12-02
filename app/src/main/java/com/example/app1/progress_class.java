@@ -1,19 +1,32 @@
 package com.example.app1;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class progress_class {
-    String subject;
-    String level;
-    int marks;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
+    Map<String, Object> result = new HashMap<>();
 
-    public void setLevel(String level) {
-        this.level = level;
-    }
+    public  progress_class(String subject,String level, int marks, int skip){
+        result.put("Subject",subject);
+        result.put("level",level);
+        result.put("marks",marks);
+        result.put("skip",skip);
 
-    public void setMarks(int marks) {
-        this.marks = marks;
+        db.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                .collection("index")
+                .document()
+                .set(result)
+                .addOnSuccessListener(unused -> {
+
+                })
+                .addOnFailureListener(e -> {
+
+                });
     }
 }

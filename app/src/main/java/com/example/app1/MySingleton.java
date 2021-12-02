@@ -1,14 +1,18 @@
 package com.example.app1;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+
 public class MySingleton {
+    @SuppressLint("StaticFieldLeak")
     private static MySingleton instance;
     private RequestQueue requestQueue;
+    @SuppressLint("StaticFieldLeak")
     private static Context ctx;
 
     private MySingleton(Context context) {

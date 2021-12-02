@@ -1,13 +1,11 @@
 package com.example.app1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.Arrays;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class enter_code extends AppCompatActivity {
 

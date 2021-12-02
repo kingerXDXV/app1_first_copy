@@ -1,30 +1,39 @@
 package com.example.app1;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Home_activity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Button linux,bash,sql,code;
+        TextView user_profile;
         linux=findViewById(R.id.linux);
         bash=findViewById(R.id.bash);
         sql=findViewById(R.id.sql);
         code=findViewById(R.id.code);
+        user_profile=findViewById(R.id.user_profile);
 
         Intent intent =new Intent(getApplicationContext(), choice_activity.class);
         the_parent_class obj = new the_parent_class();
         the_parent_class.test_code1="";
-        dataBase obj10 = new dataBase();
-        obj10.progress_data();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
+        user_profile.setText("Hello "+user.getDisplayName());
+
         linux.setOnClickListener(view -> {
             obj.setTest_code1("100");
             obj.setSubject("Linux");

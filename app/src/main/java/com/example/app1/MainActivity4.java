@@ -26,7 +26,7 @@ public class MainActivity4 extends AppCompatActivity {
     private Button option4;
     private Button next_question;
     private TextView answer_show;
-    int count=0;
+    private int count=0,skip=0;
     private String answer1,answer2,answer3,answer4;
     private int correct_answer=0;
 
@@ -36,6 +36,7 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+        //-------------------------------------------------------all buttons, textview in the activity main 4 imported from fragment
         question=findViewById(R.id.question_text);
         option1=findViewById(R.id.option_1);
         option2=findViewById(R.id.option_2);
@@ -44,12 +45,24 @@ public class MainActivity4 extends AppCompatActivity {
         next_question = findViewById(R.id.next_question);
         answer_show = findViewById(R.id.answer_show);
 
-        next_question.setClickable(false);
+        //-----------------------------------------------------asking user to skip the question
+        next_question.setText("Skip");
+
+        // ---------------------------------------------------calling theparent class
         the_parent_class obj=new the_parent_class();
 
         set_timer(obj);
+        //---------------------------------------loading question
         loadQuestion(obj);
+
         next_question.setOnClickListener(view -> {
+            if(next_question.getText().equals("Skip")){
+                skip++;
+            }
+            if(count==14){
+                end_quiz(obj);
+            }
+            next_question.setText("Skip");
             loadQuestion(obj);
             count++;
             option1.setClickable(true);
@@ -57,52 +70,56 @@ public class MainActivity4 extends AppCompatActivity {
             option3.setClickable(true);
             option4.setClickable(true);
             answer_show.setText("");
-            next_question.setClickable(false);
             option1.setBackgroundColor(Color.LTGRAY);
             option2.setBackgroundColor(Color.LTGRAY);
             option3.setBackgroundColor(Color.LTGRAY);
             option4.setBackgroundColor(Color.LTGRAY);
         });
 
+        //---------------------------------------------------------option buttons
         option1.setOnClickListener(view -> {
+            next_question.setText("Next");
             if(answer1.equals("true")){
                 option1.setBackgroundColor(Color.GREEN);
                 correct_answer++;
-                button_clickable();
             }else{
-                answer_show.setText("Correct answer = "+checker());
+                answer_show.setText("Wrong, Correct answer = "+checker());
                 option1.setBackgroundColor(Color.RED);
             }
+            button_clickable();
         });
         option2.setOnClickListener(view -> {
+            next_question.setText("Next");
             if (answer2.equals("true")) {
                 option2.setBackgroundColor(Color.GREEN);
                 correct_answer++;
-                button_clickable();
             }else{
-                answer_show.setText("Correct answer = "+checker());
+                answer_show.setText("Wrong, Correct answer = "+checker());
                 option2.setBackgroundColor(Color.RED);
             }
+            button_clickable();
         });
         option3.setOnClickListener(view -> {
+            next_question.setText("Next");
             if(answer3.equals("true")){
                 option3.setBackgroundColor(Color.GREEN);
                 correct_answer++;
-                button_clickable();
             }else{
-                answer_show.setText("Correct answer = "+checker());
+                answer_show.setText("Wrong, Correct answer = "+checker());
                 option3.setBackgroundColor(Color.RED);
             }
+            button_clickable();
         });
         option4.setOnClickListener(view -> {
+            next_question.setText("Next");
             if(answer4.equals("true")){
                 option4.setBackgroundColor(Color.GREEN);
                 correct_answer++;
-                button_clickable();
             }else{
-                answer_show.setText("Correct answer = "+checker());
+                answer_show.setText("Wrong, Correct answer = "+checker());
                 option4.setBackgroundColor(Color.RED);
             }
+            button_clickable();
         });
 
 
@@ -113,12 +130,10 @@ public class MainActivity4 extends AppCompatActivity {
         option2.setClickable(false);
         option3.setClickable(false);
         option4.setClickable(false);
-        next_question.setClickable(true);
     }
 
     @SuppressLint("ResourceAsColor")
     private String checker() {
-        button_clickable();
 
         String correct = "";
         if(answer1.equals("true")){
@@ -157,22 +172,27 @@ public class MainActivity4 extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
-                    builder.setMessage("Your time has finished")
-                            .setTitle("Time Ended")
-                            .setPositiveButton("OK", (dialogInterface, i) -> {
-                                Intent intent = new Intent(getApplicationContext(),Result_activity.class);
-                                startActivity(intent);
-                            }).setCancelable(false);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-
+                    end_quiz(obj);
                 }
             }.start();
         }else{
             watch_time.setText("");
         }
+    }
+
+    private void end_quiz(the_parent_class obj) {
         obj.setAnswer_correct(correct_answer);
+        obj.setSkip(skip);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
+        builder.setMessage("Your Quiz has finished")
+                .setTitle("Quiz Ended")
+                .setPositiveButton("OK", (dialogInterface, i) -> {
+                    Intent intent = new Intent(getApplicationContext(),Result_activity.class);
+                    startActivity(intent);
+                }).setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     // To load the question for attempting
