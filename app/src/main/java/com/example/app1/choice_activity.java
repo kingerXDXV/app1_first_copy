@@ -13,12 +13,17 @@ public class choice_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice);
 
-        Button take_test, create_test, enter_quiz_code;
+        Button article,take_test, create_test, enter_quiz_code;
+        article = findViewById(R.id.startReading);
         take_test=findViewById(R.id.take_test);
         create_test=findViewById(R.id.create_test);
         enter_quiz_code=findViewById(R.id.enter_quiz_code);
         Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
 
+        article.setOnClickListener(view ->{
+            Intent intent2 = new Intent(getApplicationContext(), articles_read.class);
+            startActivity(intent2);
+        });
 
         take_test.setOnClickListener(view -> {
             intent.putExtra("create",0);

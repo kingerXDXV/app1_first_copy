@@ -4,8 +4,6 @@ class the_parent_class {
     static String url;
     static String category;
     static boolean flag=false;
-    static int answer_correct=0;
-    static int skip=0;
     static String subject;
     static String test_code1="";
     static String test_code2="";
@@ -40,14 +38,6 @@ class the_parent_class {
     //------------------------------------ correct answer by the user during quiz
 
 
-    public int getAnswer_correct() {
-        return answer_correct;
-    }
-
-    public void setAnswer_correct(int answer_correct) {
-        the_parent_class.answer_correct = answer_correct;
-    }
-
     //--------------------selection of subject by user
 
     public String getSubject() {
@@ -74,15 +64,6 @@ class the_parent_class {
 
     public void setTest_code2(String test_code2) {
         the_parent_class.test_code2 = test_code2;
-    }
-
-    //------------------------------get skipped question from the user
-    public int getSkip() {
-        return skip;
-    }
-
-    public void setSkip(int skip) {
-        the_parent_class.skip = skip;
     }
 
     //----------------------------------getter setter for question level

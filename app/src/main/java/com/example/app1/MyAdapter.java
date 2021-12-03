@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class get_result_adapter extends RecyclerView.Adapter<get_result_adapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<model_data_result_firebase> model_data_result_firebaseArrayList;
 
-    public get_result_adapter(Context context, ArrayList<model_data_result_firebase> model_data_result_firebaseArrayList) {
+    public MyAdapter(Context context, ArrayList<model_data_result_firebase> model_data_result_firebaseArrayList) {
         this.context = context;
         this.model_data_result_firebaseArrayList = model_data_result_firebaseArrayList;
     }
@@ -36,7 +36,7 @@ public class get_result_adapter extends RecyclerView.Adapter<get_result_adapter.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         model_data_result_firebase model_data_result_firebase_obj = model_data_result_firebaseArrayList.get(position);
-        holder.display.setText("Subject : "+model_data_result_firebase_obj.subject+"\nDifficulty : "+model_data_result_firebase_obj.level+"\nMarks : "+model_data_result_firebase_obj.marks+"\nQuestion Skipped : "+model_data_result_firebase_obj.skip);
+        holder.display.setText("Subject : "+model_data_result_firebase_obj.Subject+"\nDifficulty : "+model_data_result_firebase_obj.level+"\nMarks : "+model_data_result_firebase_obj.marks+"\nQuestion Skipped : "+model_data_result_firebase_obj.skip);
     }
 
     @Override

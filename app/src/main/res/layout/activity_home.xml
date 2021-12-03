@@ -26,7 +26,9 @@
                 android:id="@+id/user_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textSize="15sp"
+                android:textAlignment="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,7 +54,8 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/bash_min"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/linux"
@@ -61,7 +64,8 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/linux_min"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,7 +82,8 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/sql_min"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/code"
@@ -89,7 +94,7 @@
                     android:background="@drawable/code_min"
                     android:textAlignment="viewStart"
 
-                    />
+                    style="?android:attr/buttonBarButtonStyle" />
 
             </LinearLayout>
 

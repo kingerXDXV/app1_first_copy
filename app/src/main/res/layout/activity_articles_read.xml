@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Result_activity">
+    tools:context=".articles_read">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/result_recycle"
+    <TextView
+        android:id="@+id/article_for_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:padding="15dp"
+        android:text=""
+        android:padding="15sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

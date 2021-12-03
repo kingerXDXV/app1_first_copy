@@ -18,7 +18,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/read_article" />
+        app:layout_constraintTop_toBottomOf="@+id/startReading" />
 
     <TextView
         android:id="@+id/textView"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.049" />
 
     <Button
-        android:id="@+id/read_article"
+        android:id="@+id/startReading"
         android:layout_width="340dp"
         android:layout_height="80dp"
         android:layout_marginTop="30dp"

@@ -48,7 +48,7 @@ public class MainActivity4 extends AppCompatActivity {
         //-----------------------------------------------------asking user to skip the question
         next_question.setText("Skip");
 
-        // ---------------------------------------------------calling theparent class
+        // ---------------------------------------------------calling the parent class
         the_parent_class obj=new the_parent_class();
 
         set_timer(obj);
@@ -176,13 +176,16 @@ public class MainActivity4 extends AppCompatActivity {
                 }
             }.start();
         }else{
+            end_quiz(obj);
             watch_time.setText("");
         }
     }
 
     private void end_quiz(the_parent_class obj) {
-        obj.setAnswer_correct(correct_answer);
-        obj.setSkip(skip);
+        String subject, level;
+        subject=obj.getSubject();
+        level=obj.getLevel();
+        new progress_class(subject,level,Integer.toString(correct_answer), Integer.toString(skip));
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
         builder.setMessage("Your Quiz has finished")

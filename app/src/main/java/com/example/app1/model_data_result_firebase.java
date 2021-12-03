@@ -1,7 +1,7 @@
 package com.example.app1;
 
 public class model_data_result_firebase {
-    String subject;
+    String Subject;
     String marks;
     String level;
     String skip;
@@ -10,8 +10,8 @@ public class model_data_result_firebase {
 
     }
 
-    public model_data_result_firebase(String subject, String marks, String level, String skip) {
-        this.subject = subject;
+    public model_data_result_firebase(String Subject, String marks, String level, String skip) {
+        this.Subject = Subject;
         this.marks = marks;
         this.level = level;
         this.skip = skip;
@@ -42,10 +42,10 @@ public class model_data_result_firebase {
     }
 
     public String getSubject() {
-        return subject;
+        return Subject;
     }
 
     public void setSubject(String subject) {
-        this.subject = subject;
+        this.Subject = subject;
     }
 }

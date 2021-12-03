@@ -12,7 +12,7 @@ public class progress_class {
 
     Map<String, Object> result = new HashMap<>();
 
-    public  progress_class(String subject,String level, int marks, int skip){
+    public  progress_class(String subject, String level, String marks, String skip){
         result.put("Subject",subject);
         result.put("level",level);
         result.put("marks",marks);
