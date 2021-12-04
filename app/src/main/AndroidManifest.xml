@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".articles_read"
+            android:exported="false" />
+        <activity
+            android:name=".enter_code"
+            android:exported="false" />
+        <activity
+            android:name=".Create_custom_test"
+            android:exported="false" />
+        <activity
             android:name=".Sign_in_activity"
             android:exported="true">
             <intent-filter>
@@ -25,8 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".Home_activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity4"
             android:exported="true" />

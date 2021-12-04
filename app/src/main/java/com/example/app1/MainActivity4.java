@@ -1,22 +1,19 @@
 package com.example.app1;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,14 +26,17 @@ public class MainActivity4 extends AppCompatActivity {
     private Button option4;
     private Button next_question;
     private TextView answer_show;
-    int count=0;
+    private int count=0,skip=0;
     private String answer1,answer2,answer3,answer4;
+    private int correct_answer=0;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+        //-------------------------------------------------------all buttons, textview in the activity main 4 imported from fragment
         question=findViewById(R.id.question_text);
         option1=findViewById(R.id.option_1);
         option2=findViewById(R.id.option_2);
@@ -45,12 +45,24 @@ public class MainActivity4 extends AppCompatActivity {
         next_question = findViewById(R.id.next_question);
         answer_show = findViewById(R.id.answer_show);
 
-        next_question.setClickable(false);
+        //-----------------------------------------------------asking user to skip the question
+        next_question.setText("Skip");
+
+        // ---------------------------------------------------calling the parent class
         the_parent_class obj=new the_parent_class();
 
         set_timer(obj);
+        //---------------------------------------loading question
         loadQuestion(obj);
+
         next_question.setOnClickListener(view -> {
+            if(next_question.getText().equals("Skip")){
+                skip++;
+            }
+            if(count==14){
+                end_quiz(obj);
+            }
+            next_question.setText("Skip");
             loadQuestion(obj);
             count++;
             option1.setClickable(true);
@@ -58,53 +70,82 @@ public class MainActivity4 extends AppCompatActivity {
             option3.setClickable(true);
             option4.setClickable(true);
             answer_show.setText("");
-            next_question.setClickable(false);
+            option1.setBackgroundColor(Color.LTGRAY);
+            option2.setBackgroundColor(Color.LTGRAY);
+            option3.setBackgroundColor(Color.LTGRAY);
+            option4.setBackgroundColor(Color.LTGRAY);
         });
 
-        option_checker();
-
-    }
-
-    // to check if option is correct of not
-    private void option_checker() {
+        //---------------------------------------------------------option buttons
         option1.setOnClickListener(view -> {
-            checker(answer1);
+            next_question.setText("Next");
+            if(answer1.equals("true")){
+                option1.setBackgroundColor(Color.GREEN);
+                correct_answer++;
+            }else{
+                answer_show.setText("Wrong, Correct answer = "+checker());
+                option1.setBackgroundColor(Color.RED);
+            }
+            button_clickable();
         });
         option2.setOnClickListener(view -> {
-            checker(answer2);
+            next_question.setText("Next");
+            if (answer2.equals("true")) {
+                option2.setBackgroundColor(Color.GREEN);
+                correct_answer++;
+            }else{
+                answer_show.setText("Wrong, Correct answer = "+checker());
+                option2.setBackgroundColor(Color.RED);
+            }
+            button_clickable();
         });
         option3.setOnClickListener(view -> {
-            checker(answer3);
+            next_question.setText("Next");
+            if(answer3.equals("true")){
+                option3.setBackgroundColor(Color.GREEN);
+                correct_answer++;
+            }else{
+                answer_show.setText("Wrong, Correct answer = "+checker());
+                option3.setBackgroundColor(Color.RED);
+            }
+            button_clickable();
         });
         option4.setOnClickListener(view -> {
-            checker(answer4);
+            next_question.setText("Next");
+            if(answer4.equals("true")){
+                option4.setBackgroundColor(Color.GREEN);
+                correct_answer++;
+            }else{
+                answer_show.setText("Wrong, Correct answer = "+checker());
+                option4.setBackgroundColor(Color.RED);
+            }
+            button_clickable();
         });
+
+
     }
 
-    //extension of option_checker function
-    @SuppressLint("SetTextI18n")
-    private void checker(String answer) {
-
-        if (answer.equals("true")){
-            answer_show.setText("Correct");
-        }else{
-            String correct = null;
-            if(answer1.equals("true")){
-                correct="a";
-            }else if(answer2.equals("true")){
-                correct="b";
-            }else if(answer3.equals("true")){
-                correct="c";
-            }else if(answer4.equals("true")){
-                correct="d";
-            }
-            answer_show.setText("Incorrect, Correct answer = "+correct);
-        }
+    private void button_clickable() {
         option1.setClickable(false);
         option2.setClickable(false);
         option3.setClickable(false);
         option4.setClickable(false);
-        next_question.setClickable(true);
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private String checker() {
+
+        String correct = "";
+        if(answer1.equals("true")){
+            correct= "option 1";
+        }else if(answer2.equals("true")){
+            correct= "option 2";
+        }else if(answer3.equals("true")){
+            correct= "option 3";
+        }else if(answer4.equals("true")){
+            correct= "option 4";
+        }
+        return correct;
     }
 
     //To set time and display an alert dialog
@@ -131,68 +172,64 @@ public class MainActivity4 extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
-                    builder.setMessage("Your time has finished")
-                            .setTitle("Time Ended")
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent intent = new Intent(getApplicationContext(),Home_activity.class);
-                                    startActivity(intent);
-                                }
-                            }).setCancelable(false);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-
+                    end_quiz(obj);
                 }
             }.start();
         }else{
+            end_quiz(obj);
             watch_time.setText("");
         }
+    }
+
+    private void end_quiz(the_parent_class obj) {
+        String subject, level;
+        subject=obj.getSubject();
+        level=obj.getLevel();
+        new progress_class(subject,level,Integer.toString(correct_answer), Integer.toString(skip));
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
+        builder.setMessage("Your Quiz has finished")
+                .setTitle("Quiz Ended")
+                .setPositiveButton("OK", (dialogInterface, i) -> {
+                    Intent intent = new Intent(getApplicationContext(),Result_activity.class);
+                    startActivity(intent);
+                }).setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     // To load the question for attempting
     private void loadQuestion(the_parent_class obj) {
 
         String url;
-        String category;
 
 
         url=obj.getUrl();
-        category= obj.getCategory();
 
-        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
 
 
-                try {
-                        JSONObject quiz = response.getJSONObject(count);
-                        question.setText(quiz.getString("question"));
-                        // json object to fetch options
-                        JSONObject op = quiz.getJSONObject("answers");
-                        option1.setText(op.getString("answer_a"));
-                        option2.setText(op.getString("answer_b"));
-                        option3.setText(op.getString("answer_c"));
-                        option4.setText(op.getString("answer_d"));
-                        // json object to fetch the correct answer
-                        JSONObject correct_op = quiz.getJSONObject("correct_answers");
-                        answer1=correct_op.getString("answer_a_correct");
-                        answer2=correct_op.getString("answer_b_correct");
-                        answer3=correct_op.getString("answer_c_correct");
-                        answer4=correct_op.getString("answer_d_correct");
+            try {
+                    JSONObject quiz = response.getJSONObject(count);
+                    question.setText(quiz.getString("question"));
+                    // json object to fetch options
+                    JSONObject op = quiz.getJSONObject("answers");
+                    option1.setText(op.getString("answer_a"));
+                    option2.setText(op.getString("answer_b"));
+                    option3.setText(op.getString("answer_c"));
+                    option4.setText(op.getString("answer_d"));
+                    // json object to fetch the correct answer
+                    JSONObject correct_op = quiz.getJSONObject("correct_answers");
+                    answer1=correct_op.getString("answer_a_correct");
+                    answer2=correct_op.getString("answer_b_correct");
+                    answer3=correct_op.getString("answer_c_correct");
+                    answer4=correct_op.getString("answer_d_correct");
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                question.setText(R.string.error);
-            }
-        });
+        }, error -> question.setText(R.string.error));
 
         // use of volley library
         MySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
@@ -204,12 +241,9 @@ public class MainActivity4 extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity4.this);
         builder.setMessage("Do you want to Exit the test.")
                 .setPositiveButton("No, Take me back",null).setCancelable(false)
-                .setNegativeButton("Exit Anyway", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(getApplicationContext(),Home_activity.class);
-                        startActivity(intent);
-                    }
+                .setNegativeButton("Exit Anyway", (dialogInterface, i) -> {
+                    Intent intent = new Intent(getApplicationContext(),Home_activity.class);
+                    startActivity(intent);
                 });
         AlertDialog dialog = builder.create();
         dialog.show();

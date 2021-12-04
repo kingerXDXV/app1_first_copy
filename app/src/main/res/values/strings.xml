@@ -32,10 +32,28 @@
     <string name="options">Options</string>
     <string name="timer">Timer</string>
     <string name="let_s_start">Let\'s <b> Start </b></string>
-    <string name="create_test">Create Test<br /><br /> You can crate a test here.</string>
-    <string name="enter_test">Enter Test </string>
+    <string name="create_test">Create Quiz</string>
+    <string name="enter_test">Enter Quiz COde </string>
     <string name="g_google">    G+  |   Google</string>
     <string name="sign_in_with">Sign In with</string>
+    <string name="congratulations_on_completing_the_quiz">Congratulations on completing the Quiz</string>
+    <string name="let_s_create_a_quiz_and_challenge_your_friends_select_subject">Let\'s Create a quiz and Challenge your friends.</string>
+    <string name="choose_difficulty">Choose Difficulty</string>
+    <string name="linux">Linux</string>
+    <string name="bash">Bash</string>
+    <string name="code">Code</string>
+    <string name="sql">SQL</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="generate_test_code">Generate Test Code</string>
+    <string name="test_code">Test Code</string>
+    <string name="share_code">Share Code</string>
+    <string name="or">OR</string>
+    <string name="enter_quiz_code">Enter Quiz Code</string>
+    <string name="enter_quiz">Enter Quiz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    URL's-->
 

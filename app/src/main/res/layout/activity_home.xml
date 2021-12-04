@@ -23,7 +23,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/user_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15sp"
+                android:textAlignment="center"/>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -46,8 +53,9 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bad_bash"
-                    android:textAlignment="viewStart" />
+                    android:background="@drawable/bash_min"
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/linux"
@@ -55,8 +63,9 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bad_linux"
-                    android:textAlignment="viewStart" />
+                    android:background="@drawable/linux_min"
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
             </LinearLayout>
 
             <LinearLayout
@@ -72,8 +81,9 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sql"
-                    android:textAlignment="viewStart" />
+                    android:background="@drawable/sql_min"
+                    android:textAlignment="viewStart"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/code"
@@ -81,10 +91,10 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/code"
+                    android:background="@drawable/code_min"
                     android:textAlignment="viewStart"
 
-                    />
+                    style="?android:attr/buttonBarButtonStyle" />
 
             </LinearLayout>
 
